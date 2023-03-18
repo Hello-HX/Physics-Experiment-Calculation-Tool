@@ -3,6 +3,7 @@
 // 二：求原始数据的A类不确定度
 // 三：根据自己输入的仪器允许误差，实现对B类不确定度的求解
 // 四：自行对数据有效数字进行舍取，从而求出合成不确定度和相对不确定度
+//ctrl + z to ese
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -14,8 +15,8 @@ int main()
     double derta, B;                          // derta为实验仪器允许的最大误差，B存放B类不确定度的计算结果
     double U, R;                              // U存放合成不确定度，R存放相对不确定度
 
-    puts("欢迎来到我的大学物理实验小工具！\n")
-        printf("请输入数据个数:"); // 输入数据个数提示
+    puts("欢迎来到我的大学物理实验小工具！\n");
+    printf("请输入数据个数:"); // 输入数据个数提示
     scanf("%d", &n);
     while (1)
     {
@@ -67,18 +68,12 @@ int main()
         U = sqrt(pow(A, 2) + pow(B, 2));
         printf("合成不确定度为:%lf\n\n", U);
 
-        printf("\n");
+
         // 求相对不确定度
         R = U / average;
         printf("相对不确定度为:%f\n\n", R);
 
-        printf("/n");
-        printf("继续或者退出q？\n");
-        char q;
-        scanf("%c", &q);
-        if (q == 'q')
-            return 0;
-        system("cls");
+        printf("\n\n");
     }
     return 0;
 }
